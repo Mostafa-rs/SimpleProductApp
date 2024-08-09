@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "a08b8c7c-c8c0-4aeb-b8f4-8618e58f6c35",
+		"name": "ProductService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26618618"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "mostafa",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/accounts/login/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"accounts",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "",
+									"description": "User's refresh token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/accounts/login/refresh/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"accounts",
+								"login",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/products/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/products/3/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"description": "User's access token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "p6",
+									"description": "Product name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "desc6",
+									"description": "A brief description of the product.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "8766.44",
+									"description": "Product price",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "43",
+									"description": "The number of items in stock.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/products/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"description": "User's access token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "UpdateTest2",
+									"description": "Product name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "A brief description of the product.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "Product price",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "",
+									"description": "The number of items in stock.",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/products/3/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"description": "User's access token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/products/7/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"products",
+								"7",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
